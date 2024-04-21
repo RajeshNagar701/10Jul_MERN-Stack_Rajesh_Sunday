@@ -4,7 +4,7 @@ import React from 'react'
 
 function Simple_bootstrap() {
   return (
-    <div>
+    <div className='container mt-5'>
         <button className='btn btn-primary'> Simple Bootsrap Button</button>
     </div>
   )
