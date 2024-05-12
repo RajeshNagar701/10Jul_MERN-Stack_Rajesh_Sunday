@@ -11,7 +11,7 @@ function Dashboard() {
                 <div className="container py-5">
                     <div className="row align-items-center">
                         <div className="col-lg-6 pb-5 pb-lg-0">
-                            <img className="img-fluid w-100" src="img/about.jpg" alt />
+                            <img className="img-fluid w-100" src="admin/img/about.jpg" alt />
                         </div>
                         <div className="col-lg-6">
                             <h6 className="d-inline-block text-primary text-uppercase bg-light py-1 px-2">About Us</h6>

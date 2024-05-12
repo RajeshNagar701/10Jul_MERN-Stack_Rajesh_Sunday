@@ -5,7 +5,7 @@ import Header2 from '../component/Header2'
 function Contact() {
     return (
         <>
-            <Header2 />
+            <Header2  title="Contact Us"/>
             {/* Contact Start */}
             < div className="container-fluid py-5" >
                 <div className="container py-5">

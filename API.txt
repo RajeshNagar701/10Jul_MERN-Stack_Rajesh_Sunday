@@ -1,0 +1,18 @@
+
+axios.get(`http://localhost:3000/contacts`) all data in arr
+axios.get(`http://localhost:3000/contacts/2`) single id data in obj
+axios.get(`http://localhost:3000/contacts?country=india`) column data in arr
+
+
+axios.delete(`http://localhost:3000/contacts/2`) delete id data
+
+object={
+        "id": "1712203580572",
+        "name": "raj nagar",
+        "email": "pavan@gmail.com",
+        "comment": "asdasd"
+    }
+
+axios.post(`http://localhost:3000/contacts`,object) insert obj data
+
+axios.patch(`http://localhost:3000/contacts/2`,object) update obj in particular id

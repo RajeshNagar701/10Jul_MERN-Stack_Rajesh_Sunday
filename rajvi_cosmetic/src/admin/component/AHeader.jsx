@@ -59,15 +59,15 @@ function AHeader({title}) {
                             <div className="nav-item dropdown">
                                 <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                                 <div className="dropdown-menu rounded-0 m-0">
-                                    <NavLink to="/add_categories" className="dropdown-item">Add Services</NavLink>
-                                    <NavLink to="/manage_categories" className="dropdown-item">Manage Services</NavLink>   
+                                    <NavLink to="/add_services" className="dropdown-item">Add Services</NavLink>
+                                    <NavLink to="/manage_services" className="dropdown-item">Manage Services</NavLink>   
                                 </div>
                             </div>
                             <div className="nav-item dropdown">
                                 <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                                 <div className="dropdown-menu rounded-0 m-0">
-                                    <NavLink to="/add_categories" className="dropdown-item">Add Blog</NavLink>
-                                    <NavLink to="/manage_categories" className="dropdown-item">Manage Blog</NavLink>   
+                                    <NavLink to="/add_blog" className="dropdown-item">Add Blog</NavLink>
+                                    <NavLink to="/manage_blog" className="dropdown-item">Manage Blog</NavLink>   
                                 </div>
                             </div>
 
