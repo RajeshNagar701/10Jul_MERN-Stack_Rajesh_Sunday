@@ -53,9 +53,16 @@ function Signup() {
     const submitHandel = async (e) => {
         e.preventDefault();
         if (validation()) {
-            const res = await axios.post(`http://localhost:3000/user`, formvalue);
-            setFormvalue({ ...formvalue, name: "", email: "", password: "", mobile: "", img: "" });
-            toast.success('Signup Success');
+            const res = await axios.get(`http://localhost:3000/user?email=${formvalue.email}`);
+            console.log(res.data);
+            if (res.data.length > 0) {
+                toast.error('This email id already Registered !')
+            }
+            else {
+                const res = await axios.post(`http://localhost:3000/user`, formvalue);
+                setFormvalue({ ...formvalue, name: "", email: "", password: "", mobile: "", img: "" });
+                toast.success('Signup Success');
+            }
         }
     }
 
@@ -77,11 +84,11 @@ function Signup() {
                             <div className="contact-form bg-light p-4 p-lg-5 my-lg-5">
                                 <h6 className="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Signup</h6>
                                 <h1 className="mb-4">Signup Here</h1>
-                               
+
                                 <form id="contactForm" method='post' onSubmit={submitHandel}>
                                     <div className="form-row">
                                         <div className="col-sm-12 control-group">
-                                            <input type="text" value={formvalue.name} onChange={changeHandel} className="form-control border-0 p-4" name="name" id="name" placeholder="Your Name"  />
+                                            <input type="text" value={formvalue.name} onChange={changeHandel} className="form-control border-0 p-4" name="name" id="name" placeholder="Your Name" />
                                             <p className="help-block text-danger" />
                                         </div>
                                         <div className="col-sm-12 control-group">
@@ -93,7 +100,7 @@ function Signup() {
                                             <p className="help-block text-danger" />
                                         </div>
                                         <div className="col-sm-12 control-group">
-                                            <input type="number" value={formvalue.mobile} onChange={changeHandel} className="form-control border-0 p-4" name="mobile" id="mobile" placeholder="Your Mobile"/>
+                                            <input type="number" value={formvalue.mobile} onChange={changeHandel} className="form-control border-0 p-4" name="mobile" id="mobile" placeholder="Your Mobile" />
                                             <p className="help-block text-danger" />
                                         </div>
                                         <div className="col-sm-12 control-group">

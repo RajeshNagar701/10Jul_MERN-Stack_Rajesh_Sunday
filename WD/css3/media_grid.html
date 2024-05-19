@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+[class*="col-"]{
+	width:100%;
+}
+@media only screen and (min-width: 600px) {
+  /* For tablet: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+
+.header{
+	background-color:yellow;
+	text-align:center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="row">
+	<div class="col-12 col-s-12 header"><h1>Header</h1></div>
+</div>
+
+<div class="row">
+	<div class="col-2 col-s-4" style="background-color:pink"><h1>sidebar</h1></div>
+	<div class="col-8 col-s-8" style="background-color:LightGaray">
+		<h1>Box</h1>
+		<div class="row">
+			<div class="col-12 col-s-12" style="background-color:red"><h1>Box</h1></div>
+		</div>
+		<h1>Box</h1>
+		<div class="row">
+			<div class="col-6 col-s-12" style="background-color:red"><h1>Box</h1></div>
+			<div class="col-6 col-s-12" style="background-color:green"><h1>Box</h1></div>
+		</div>
+		<h1>Box</h1>
+		<div class="row">
+			<div class="col-4 col-s-6" style="background-color:red"><h1>Box</h1></div>
+			<div class="col-4 col-s-6" style="background-color:green"><h1>Box</h1></div>
+			<div class="col-4 col-s-12" style="background-color:red"><h1>Box</h1></div>
+		</div>
+		<h1>Box</h1>
+		<div class="row">
+			
+			<div class="col-3 col-s-6" style="background-color:red"><h1>Box</h1></div>
+			<div class="col-3 col-s-6" style="background-color:green"><h1>Box</h1></div>
+			<div class="col-3 col-s-6" style="background-color:red"><h1>Box</h1></div>
+			<div class="col-3 col-s-6" style="background-color:green"><h1>Box</h1></div>
+		</div>
+		<h1>Box</h1>
+	</div>
+	<div class="col-2" style="background-color:pink"><h1>sidebar</h1></div>
+</div>
+
+<div class="row">
+	<div class="col-3" style="background-color:red"><h1>Box</h1></div>
+	<div class="col-3" style="background-color:green"><h1>Box</h1></div>
+	<div class="col-3" style="background-color:red"><h1>Box</h1></div>
+	<div class="col-3" style="background-color:green"><h1>Box</h1></div>
+</div>
+
+
+
+
+</body>
+</html>

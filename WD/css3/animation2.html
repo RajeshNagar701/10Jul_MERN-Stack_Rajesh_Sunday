@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+/* The animation code by from  to */
+
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}  
+}
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+/* The animation code by % */
+div#mydiv{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example1;
+  animation-duration: 10s;
+}
+@keyframes example1 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  75% {background-color: orange;}
+  100% {background-color: green;}
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<div></div>
+
+<br>
+<br>
+<br>
+<div id="mydiv"></div>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script>
+// first Make one function
+
+function validation(){
+	
+	var ufn=document.getElementById('ufn').value;
+	if(ufn=="" || ufn==null)
+	{
+		alert("Field is required");
+		return false;
+	}
+	
+	var uln=document.getElementById('uln').value;
+	if(uln=="" || uln==null)
+	{
+		document.getElementById('ulnmsg').innerHTML="uln Field is required";
+		return false;
+	}
+}
+
+
+</script>
+</head>
+
+<body>
+                                      
+<form action="" method="post" onsubmit="return validation()">
+			<table border="2" align="center">
+            	<tr>
+                	<th> Registration Page </th>
+                </tr>
+                <tr>
+            		<th>User Fist Name:-</th>
+                    <td><input type="text" name="ufn" id="ufn" ></td>
+                </tr>
+				
+				<tr>
+            		<th>User Last Name:-</th>
+                    <td><input type="text" name="uln" id="uln" >
+						<span id="ulnmsg" style="color:red"></span>
+					</td>
+                </tr>
+  
+                <tr>
+                	<td><input type="submit" name="submit"/></td>
+                    
+                </tr>
+                 	
+            	
+            </table>
+                
+        </form>
+
+
+<hr>
+<script>
+
+function validation1(){
+	
+	var ufn=document.forms['myform1']['ufn'].value;
+	if(ufn=="" || ufn==null)
+	{
+		alert("Field is required from form1");
+		return false;
+	}
+	
+	var uln=document.forms['myform1']['uln'].value;
+	if(uln=="" || uln==null)
+	{
+		document.getElementById('ulnmsg1').innerHTML="uln Field is required from form1";
+		return false;
+	}
+}
+
+
+</script>
+
+		<form name="myform1" action="" method="post" onsubmit="return validation1()">
+			<table border="2" align="center">
+            	<tr>
+                	<th> Registration Page </th>
+                </tr>
+                <tr>
+            		<th>User Fist Name:-</th>
+                    <td><input type="text" name="ufn"  ></td>
+                </tr>
+				
+				<tr>
+            		<th>User Last Name:-</th>
+                    <td><input type="text" name="uln"  >
+						<span id="ulnmsg1" style="color:red"></span>
+					</td>
+                </tr>
+  
+                <tr>
+                	<td><input type="submit" name="submit1"/></td>
+                    
+                </tr>
+                 	
+            	
+            </table>
+                
+        </form>
+
+<hr>
+
+
+<script>
+
+function validation2(str){
+	
+	
+	if(str.ufn.value=="")
+	{
+	document.getElementById("msg").innerHTML="! Please enter Some Value in User Name";
+	str.ufn.focus();
+	return false;
+	}
+	
+	if(str.uln.value=="")
+	{
+	document.getElementById("msg").innerHTML="! Please enter Some Value in User Last Name";
+	str.uln.focus();
+	return false;
+	}
+
+}
+</script>
+
+
+		<h1 align="center" id="msg" style="color:red"></h1>
+		<form action="" method="post" onsubmit="return validation2(this)">
+			<table border="2" align="center">
+            	<tr>
+                	<th> Registration Page </th>
+                </tr>
+                <tr>
+            		<th>User Fist Name:-</th>
+                    <td><input type="text" name="ufn" id="ufn" ></td>
+                </tr>
+				
+				<tr>
+            		<th>User Last Name:-</th>
+                    <td><input type="text" name="uln" id="uln" >
+						
+					</td>
+                </tr>
+  
+                <tr>
+                	<td><input type="submit" name="submit1"/></td>
+                    
+                </tr>
+                 	
+            	
+            </table>
+                
+        </form>
+
+
+</body>
+</html>

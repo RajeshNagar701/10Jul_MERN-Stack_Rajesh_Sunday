@@ -1,0 +1,60 @@
+
+*{
+	margin:0px;
+	box-sizing:border-box;
+}
+
+.row{
+	display:flex;
+}
+
+
+
+.header{
+	
+	height:100px;
+	width:100%;
+	background-color:red;
+	float:left;
+}
+
+.sidebar{
+	
+	height:auto;
+	width:15%;
+	background-color:orange;
+	float:left;
+}
+
+.sidebar ul{
+	 padding:15px;
+	 list-style-type:none;
+	 color:blue;
+	 font-weight:900;
+}
+
+.mainbar{
+	
+	height:auto	;
+	width:70%;
+	background-color:LightGray;
+	float:left;
+}
+
+.mainbox{
+	width:50%;
+	float:left;
+    padding:15px;
+}
+
+
+.box{
+	color:white;
+	padding:15px;
+	width:25%;
+	height:auto;
+	background-color:black;
+	float:left;
+}
+
+

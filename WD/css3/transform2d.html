@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+  transition-duration: 1s;
+}
+div#myDiv {
+  transform: rotate(180deg); /* Standard syntax   2d rotateZ(50deg)*/
+}
+div#scalediv:hover{
+ transform:scale(2,3)
+}
+</style>
+</head>
+<body>
+<div>
+This a normal div element.
+</div>
+<br>
+<br>
+<br>
+<div id="myDiv">
+This div element is rotated clockwise 20 degrees.
+</div>
+
+<br>
+<br>
+<br>
+<div id="scalediv">
+This div element is rotated clockwise 20 degrees.
+</div>
+</body>
+</html>

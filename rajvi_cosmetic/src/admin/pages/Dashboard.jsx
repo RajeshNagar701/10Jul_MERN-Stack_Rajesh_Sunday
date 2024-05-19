@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AHeader from '../component/AHeader'
 import AFooter from '../component/AFooter'
+import { useNavigate } from 'react-router-dom'
 
 function Dashboard() {
+  
     return (
         <div>
             <AHeader />

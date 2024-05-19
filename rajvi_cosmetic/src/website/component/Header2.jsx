@@ -1,8 +1,18 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink ,useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 
-function Header2({title}) {
+function Header2({ title }) {
+
+    const redirect = useNavigate()
+
+    const logout = () => {
+        localStorage.removeItem('uid');
+        localStorage.removeItem('uname');
+        toast.success('Logout Success');
+        redirect('/');
+    }
     return (
         <div>
             <div className="container-fluid bg-light d-none d-lg-block">
@@ -38,7 +48,7 @@ function Header2({title}) {
             {/* Topbar End */}
             {/* Navbar Start */}
             <div className="container-fluid p-0">
-            <nav className="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+                <nav className="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
                     <NavLink to="/" className="navbar-brand ml-lg-3">
                         <h1 className="m-0 text-primary"><span className="text-dark">Rajvi</span> Clinic & Cosmetic</h1>
                     </NavLink>
@@ -49,7 +59,7 @@ function Header2({title}) {
                         <div className="navbar-nav m-auto py-0">
                             <NavLink to="/" className="nav-item nav-link">Home</NavLink>
                             <NavLink to="/about" className="nav-item nav-link">About</NavLink>
-                          
+
                             <div className="nav-item dropdown">
                                 <NavLink to="/services" className="nav-link dropdown-toggle" data-toggle="dropdown">Services</NavLink>
                                 <div className="dropdown-menu rounded-0 m-0">
@@ -58,8 +68,27 @@ function Header2({title}) {
                             </div>
                             <NavLink to="/blog" className="nav-item nav-link">Blog</NavLink>
                             <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
+                            {(() => {
+                                if (localStorage.getItem('uid')) {
+                                    return (
+                                        <NavLink to="/profile" className="nav-item nav-link">Hi.. {localStorage.getItem('uname')}</NavLink>
+                                    )
+                                }
+                            })()}
+
                         </div>
-                        <NavLink to="/login" className="btn btn-primary d-none d-lg-block">Login</NavLink>
+                        {(() => {
+                            if (localStorage.getItem('uid')) {
+                                return (
+                                    <a href="javascript:void(0)" onClick={logout} className="btn btn-primary d-none d-lg-block">Logout</a>
+                                )
+                            }
+                            else {
+                                return (
+                                    <NavLink to="/login" className="btn btn-primary d-none d-lg-block">Login</NavLink>
+                                )
+                            }
+                        })()}
                     </div>
                 </nav>
             </div>

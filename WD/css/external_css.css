@@ -1,0 +1,32 @@
+h1,h2,h3{
+	color:green;
+	background-color:yellow;
+	font-size:30px;
+	text-align:center;
+	}
+.akash{
+	color:blue;
+	background-color:pink;
+}	
+
+.center{
+	text-align:center;
+}
+
+#prakash{
+	color:white;
+	background-color:green;
+}
+#prakash p{
+	text-decoration:underline;
+}
+#prakash .demo{
+	text-decoration:underline;
+}
+
+	
+h4.test{
+letter-spacing:15px;
+}
+
+

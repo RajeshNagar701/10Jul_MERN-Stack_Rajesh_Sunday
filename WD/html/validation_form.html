@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<fieldset>
+<legend align="center"> Registration form </legend> 
+<form action="" method="post" >
+
+  
+  First name:<br>
+  <input type="text" name="firstname" required>
+  <br><br>
+  
+   Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5"><br><br>
+  minlength 
+  <input type="password" name="password" minlength="8">
+  <br><br> 
+   maxlength 
+  <input type="password" name="password" maxlength="8">
+  <br><br> 
+  Email : @
+  <input type="email" name="email"><br><br>
+  pattern a-z<br>
+  <input type="text" name="only_alpha" pattern="[a-zA-Z]+" title="add only alphabatecaly">
+  <br><br> 
+    pattern a-z with minlengh max lengh<br>
+  <input type="text" name="only_alpha" pattern="[a-zA-Z]{3,8}" title="add only alphabatecaly min 3 & max 8">
+  <br><br> 
+  number<br>
+  <input type="text" name="only_number" pattern="[0-9]{10,11}" title="add only add mobile number">
+  <br><br> 
+  <br><br>
+  <input type="submit" name="submit" value="Submit Name">
+</form>
+</fieldset>
+
+
+
+</body>
+</html>

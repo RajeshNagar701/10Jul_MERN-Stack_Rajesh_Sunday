@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.static {
+  width:200px;
+  background-color:red;	
+  position: static;
+  border: 3px solid #73AD21;
+}
+
+.static1 {
+  width:200px;
+  background-color:green;	
+  position: static;
+  border: 3px solid #73AD21;
+}
+
+.relative {
+  width:200px;
+  background-color:blue;	
+  position:relative;
+  top:30px;
+  left:30px;
+  border: 3px solid #73AD21;
+}
+
+.fixed {
+  width:50px;
+  height:50px;
+  background-color:Orange;	
+  position: fixed;
+  bottom:10px;
+  right:0px;
+  border: 3px solid #73AD21;
+}
+
+.fixed1 {
+  width:100%;
+  height:auto;
+  background-color:Orange;	
+  position: fixed;
+  top:0px;
+  border: 3px solid #73AD21;
+}
+
+
+.sticky {
+  width:100%;
+  height:auto;
+  background-color:pink;	
+  position: sticky;
+  bottom:0px;
+  border: 3px solid #73AD21;
+}
+
+
+.banner{
+	background-image:url(slide1.jpg);
+	background-size:cover;
+	padding:100px;
+	
+}
+
+.banner2{
+	width:100%;
+	height:auto;
+	border:solid 2px yellow;
+	position:relative;
+}
+
+.arrowleft{  
+	background-color:red;
+	padding:20px;
+	position:absolute;
+	top:250px;
+	left:20px;
+}
+.arrowright{
+	background-color:red;
+	padding:20px;
+	position:absolute;
+	top:250px;
+	right:20px;
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+<p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p>
+
+<div class="sticky">
+	sticky data 
+</div>
+
+<p>An element with position: static; is not positioned in any special way; it is 
+always positioned according to the normal flow of the page:</p>
+
+<div class="static">
+  This div element has position: static1;
+</div>
+<div class="relative">
+This div element has position: relative;
+</div>
+<div class="static">
+  This div element has position: static2;
+</div>
+<div class="fixed">
+ Fixed
+</div>
+
+<p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p><p>Hello</p>
+
+<div class="fixed1">
+	<a href="#">Navbar</a>
+</div>
+
+<hr>
+<div class="banner">
+	<h1 style="text-align:center;color:white; font-size:30px;">Banner</h1>
+</div>
+<hr>
+<div class="banner2">
+	<div class="arrowleft"> < </div>
+	<div class="arrowright"> > </div>
+	<h1 style="position:absolute;top:100px; left:45%;color:blue; font-size:30px;">Banner</h1>
+	<img src="slide2.jpg" width="100%" height="550px;">
+</div>
+
+</body>
+</html>

@@ -20,6 +20,8 @@ import Blog from "./website/pages/Blog";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Profile from "./website/pages/Profile";
+import Edit_profile from "./website/pages/Edit_profile";
 
 
 function App() {
@@ -37,8 +39,10 @@ function App() {
       <Route path="/signup" element={<Signup/>}></Route>
       <Route path="/about" element={<About/>}></Route>
       <Route path="/services" element={<Services/>}></Route>
-      <Route path="/view_service" element={<View_service/>}></Route>
+      <Route path="/view_service/:id" element={<View_service/>}></Route>
       <Route path="/blog" element={<Blog/>}></Route>
+      <Route path="/profile" element={<Profile/>}></Route>
+      <Route path="/edit_profile/:id" element={<Edit_profile/>}></Route>
       
       {// admin roues
       }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--
+
+ white-space: nowrap; 
+ 
+ text-overflow:ellipsis;
+ 
+ text-overflow:clip; default
+ 
+ word-break: break-all/ default keep-all;
+ writing-mode: vertical-rl; 
+ 
+-->
+
+<style> 
+div.test {
+  white-space: nowrap; 
+  width: 200px; 
+  overflow: hidden; 
+  border: 1px solid #000000;
+  text-overflow:ellipsis;
+}
+
+div.test:hover{
+	overflow:visible;
+}
+
+.box{
+  width: 200px; 
+  border: 1px solid #000000;
+  word-break: break-all;
+}
+
+
+.vertical{
+	writing-mode: vertical-rl; 
+}
+
+</style>
+</head>
+<body>
+
+<p>Hover over the two divs below, to see the entire text.</p>
+<div class="test" >This is some long text that will not fit in the box</div>
+<hr>
+
+<div class="box" >This is some long text that willdffs not fit in the boxThis is some long text that will notfdsf fit in the boxThis is some long text that will not fit in the boxThis is some long text that will not fit in the box</div>
+<hr>
+<h1 class="vertical">Raj Nagar</h1>
+</body>
+</html>
+

@@ -1,12 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../component/Footer'
 import Header2 from '../component/Header2'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import axios from 'axios'
 
 function Login() {
+
+    const redirect=useNavigate();
+    const [formvalue, setFormvalue] = useState({
+        email: "",
+        password: "",
+    })
+
+    const changeHandel = (e) => {
+        setFormvalue({ ...formvalue, [e.target.name]: e.target.value });
+        console.log(formvalue);
+    }
+
+    function validation() {
+        let ans = true;
+        if (formvalue.email == "") {
+            toast.error("Email Field is Required");
+            ans = false;
+            return false;
+        }
+        if (formvalue.password == "") {
+            toast.error("password Field is Required");
+            ans = false;
+            return false;
+        }
+        return ans;
+    }
+
+    const submitHandel = async (e) => {
+        e.preventDefault();
+        if (validation()) {
+            const res = await axios.get(`http://localhost:3000/user?email=${formvalue.email}`);
+            console.log(res.data);
+            if (res.data.length > 0) {
+                if (res.data[0].password == formvalue.password) {
+                    if (res.data[0].status == "Unblock") {
+                       
+                        // session 
+                        localStorage.setItem('uid',res.data[0].id);
+                        localStorage.setItem('uname',res.data[0].name);
+
+                        toast.success('Login Succees');
+                        redirect('/');
+                    }
+                    else {
+                        toast.error('User Blocked so Contact rajvi!');
+                    }
+                }
+                else {
+                    toast.error('Password incorrect!');
+                }
+            }
+            else {
+                toast.error('Email does nor exist !');
+            }
+        }
+    }
     return (
         <>
-            <Header2 title="Login Here"/>
+            <Header2 title="Login Here" />
             {/* Contact Start */}
             < div className="container-fluid py-5" >
                 <div className="container py-5">
@@ -20,20 +78,21 @@ function Login() {
                             <div className="contact-form bg-light p-4 p-lg-5 my-lg-5">
                                 <h6 className="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Login</h6>
                                 <h1 className="mb-4">Login Here</h1>
-                                <div id="success" />
-                                <form name="sentMessage" id="contactForm" noValidate="novalidate">
+
+                                <form id="contactForm" method='post' onSubmit={submitHandel}>
                                     <div className="form-row">
-                                        
+
                                         <div className="col-sm-12 control-group">
-                                            <input type="email" className="form-control border-0 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                            <input type="email" value={formvalue.email} onChange={changeHandel} className="form-control border-0 p-4" name="email" id="email" placeholder="Your Email" />
                                             <p className="help-block text-danger" />
                                         </div>
                                         <div className="col-sm-12 control-group">
-                                            <input type="text" className="form-control border-0 p-4" id="password" placeholder="Your Password" required="required" data-validation-required-message="Please enter Password" />
+                                            <input type="text" value={formvalue.password} onChange={changeHandel} className="form-control border-0 p-4" name="password" id="password" placeholder="Your Password" />
                                             <p className="help-block text-danger" />
                                         </div>
+
                                     </div>
-                                    
+
                                     <div>
                                         <button className="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Login</button>
                                         <Link to='/signup' className='float-right'>If you not registered then Signup Here</Link>

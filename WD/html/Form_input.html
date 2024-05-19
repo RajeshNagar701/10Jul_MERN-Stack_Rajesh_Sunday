@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Text Input</h2>
+<!--
+The Action Attribute
+The action attribute defines the action to be performed when the form is submitted.
+The method attribute specifies the HTTP method (GET or POST) to be used when submitting the form data:
+The <fieldset> element is used to group related data in a form.
+The <legend> element defines a caption for the <fieldset> element.
+-->
+
+
+<fieldset>
+<legend> Registration form </legend> 
+<form action="https://www.facebook.com/" method="post" target="_blank" >
+
+  
+  First name:<br>
+  <input type="text" name="firstname" value="raj nagar">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" placeholder="Enter your last name">
+   <br>
+  Religion<br>
+  <input type="text" name="lastname" value="Indian" readonly>
+   <br>
+  Religion<br>
+  <input type="text" name="lastname" value="Indian" disabled>
+  
+  <br>
+  size<br>
+  <input type="text" name="lastname" size="10">
+  
+ <br>
+  User password:<br>
+  <input type="password" name="psw">
+  <br>
+  User Gender:<br>
+   <input type="radio" name="gender" value="male" > Male<br>
+  <input type="radio" name="gender" value="female" checked> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+  <br>
+  User vehicle:<br>
+  <input type="checkbox" name="vehicle1" value="Bike" checked> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car 
+  <br>
+  Select your favorite color:
+  <input type="color" name="favcolor">
+  <br>
+  Birthday:
+  <input type="date" name="bday">
+  <br>
+   Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5"><br>
+  
+  
+  Enter a date before 1980-01-01:
+  <input type="date" name="bday" max="1979-12-31"><br>
+  Enter a date after 2000-01-01:
+  <input type="date" name="bday" min="2021-06-17"><br>
+  
+  
+  
+  Birthday (date and time):
+  <input type="datetime-local" name="bdaytime"><br>
+   E-mail:
+  <input type="email" name="email"><br>
+  
+   Birthday (month and year):
+  <input type="month" name="bdaymonth"><br>
+ 
+  
+   Select a file: 
+   <input type="file" name="myFile" multiple><br>
+  
+  Select Car Dropdown:
+  <select name="cars"  multiple>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+	 <option value="Scoda">Scoda</option>
+    <option value="Renault">Renault</option>
+  </select>
+  <br>
+  Address / Comment:
+  <textarea name="message" rows="5" cols="40">
+	The cat was playing in the garden.
+  </textarea>
+  
+  <br><br>
+  <input type="submit" name="submit" value="Submit Name">
+  <button name="submit">Register</button>
+  
+  <input type="reset">
+</form>
+</fieldset>
+
+
+</body>
+</html>

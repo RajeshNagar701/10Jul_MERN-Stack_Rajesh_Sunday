@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<!--
+
+Date()  // gmt format date
+
+getFullYear()  Get the year as a four digit number (yyyy)
+getMonth() Get the month as a number (0-11)  +1
+getDate() 	Get the day as a number (1-31)
+
+getHours() Get the hour (0-23)
+getMinutes() 	Get the minute (0-59)
+getSeconds() Get the second (0-59)
+
+-->
+
+<script>
+var today = new Date();
+
+document.write(today +"<br>");
+
+document.write(today.getDate() + "<br>");
+document.write(today.getMonth() + "<br>");
+document.write(today.getFullYear() + "<br>");
+
+
+document.write(today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear() +"<br>");
+document.write(today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() +"<br>");
+
+</script>
+
+</body>
+</html>
+
+

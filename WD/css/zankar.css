@@ -1,0 +1,25 @@
+h1,h2,h3{
+	color:blue;
+	background-color:orange;
+}
+
+.zankar{
+color:pink;
+background-color:blue;
+font-style:italic;
+}
+
+.raj{
+text-align:center;
+}
+
+
+#daminee{
+color:white;
+background-color:black;
+font-style:italic;
+}
+
+h4.test{
+color:green;
+}

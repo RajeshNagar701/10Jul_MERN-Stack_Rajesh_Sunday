@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Footer from '../component/Footer'
 import Header2 from '../component/Header2'
 import { Helmet } from 'react-helmet'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Services() {
+    
+    const redirect=useNavigate();
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch();
+    });
+    const fetch = async () => {
+        const res = await axios.get(`http://localhost:3000/categories`);
+        console.log(res.data);
+        setData(res.data)
+    }
     return (
         <>
             <Header2 title="Services" />
@@ -16,66 +30,24 @@ function Services() {
                         </div>
                     </div>
                     <div className="owl-carousel service-carousel">
-                        <div className="service-item position-relative">
-                            <img className="img-fluid" src="website/img/service-1.jpg" alt />
-                            <div className="service-text text-center">
-                                <h4 className="text-white font-weight-medium px-3">Body Massage</h4>
-                                <p className="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                                <div className="w-100 bg-white text-center p-4">
-                                    <a className="btn btn-primary" href>Make Order</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-item position-relative">
-                            <img className="img-fluid" src="website/img/service-2.jpg" alt />
-                            <div className="service-text text-center">
-                                <h4 className="text-white font-weight-medium px-3">Stone Therapy</h4>
-                                <p className="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                                <div className="w-100 bg-white text-center p-4">
-                                    <a className="btn btn-primary" href>Make Order</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-item position-relative">
-                            <img className="img-fluid" src="website/img/service-3.jpg" alt />
-                            <div className="service-text text-center">
-                                <h4 className="text-white font-weight-medium px-3">Facial Therapy</h4>
-                                <p className="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                                <div className="w-100 bg-white text-center p-4">
-                                    <a className="btn btn-primary" href>Make Order</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-item position-relative">
-                            <img className="img-fluid" src="website/img/service-4.jpg" alt />
-                            <div className="service-text text-center">
-                                <h4 className="text-white font-weight-medium px-3">Skin Care</h4>
-                                <p className="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                                <div className="w-100 bg-white text-center p-4">
-                                    <a className="btn btn-primary" href>Make Order</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-item position-relative">
-                            <img className="img-fluid" src="website/img/service-5.jpg" alt />
-                            <div className="service-text text-center">
-                                <h4 className="text-white font-weight-medium px-3">Stream Bath</h4>
-                                <p className="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                                <div className="w-100 bg-white text-center p-4">
-                                    <a className="btn btn-primary" href>Make Order</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="service-item position-relative">
-                            <img className="img-fluid" src="website/img/service-6.jpg" alt />
-                            <div className="service-text text-center">
-                                <h4 className="text-white font-weight-medium px-3">Face Masking</h4>
-                                <p className="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                                <div className="w-100 bg-white text-center p-4">
-                                    <a className="btn btn-primary" href>Make Order</a>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            data && data.map((value) => {
+                                return (
+                                    <div className="service-item position-relative">
+                                        <img className="img-fluid" src="website/img/service-1.jpg" alt />
+                                        <div className="service-text text-center">
+                                            <h4 className="text-white font-weight-medium px-3">{value.cate_name}</h4>
+                                            <p className="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
+                                            <div className="w-100 bg-white text-center p-4">
+                                                <a className="btn btn-primary" href="javascript:void(0)" onClick={()=>redirect('/view_service/'+value.id)}>View Services</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+
+
                     </div>
                     <div className="row justify-content-center bg-appointment mx-0">
                         <div className="col-lg-6 py-5">
