@@ -19,10 +19,24 @@ function Manage_customer() {
         const res = await axios.delete(`http://localhost:3000/user/${id}`);
         toast.success('User Delete success');
     }
+    const statushandel = async (id) => {
+        const res = await axios.get(`http://localhost:3000/user/${id}`);
+        console.log(res.data);
+        if (res.data.status == "Block") {
+            const res1=await axios.patch(`http://localhost:3000/user/${id}`,{status:"Unblock"});
+            toast.success('User Unblock success');
+        }
+        else {
+            const res1=await axios.patch(`http://localhost:3000/user/${id}`,{status:"Block"});
+            toast.success('User Block success');
+            localStorage.removeItem('uid');
+            localStorage.removeItem('uname');
+        }
+    }
 
     return (
         <div>
-            <AHeader title="Manage Customer"/>
+            <AHeader title="Manage Customer" />
             < div className="container-fluid" >
                 <div className="container">
                     <div className="row">
@@ -45,7 +59,7 @@ function Manage_customer() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {
+                                        {
                                             data && data.map((value, index, arr) => {
                                                 return (
                                                     <tr>
@@ -53,16 +67,29 @@ function Manage_customer() {
                                                         <td>{value.name}</td>
                                                         <td>{value.email}</td>
                                                         <td>{value.mobile}</td>
-                                                        <td><img src={value.img} width="50px"/></td>
+                                                        <td><img src={value.img} width="50px" /></td>
                                                         <td>
                                                             <button className='btn btn-info mr-2' >Edit</button>
-                                                            <button className='btn btn-danger' onClick={()=>deletehandel(value.id)}>Delete</button>
+                                                            <button className='btn btn-success mr-2' onClick={() => statushandel(value.id)}>
+                                                                {value.status}
+                                                                {/*(()=>{
+                                                                    if(value.status=="Block")
+                                                                        { 
+                                                                            return(<>Unblock</>)
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            return(<>Block</>)
+                                                                        }
+                                                                })()
+                                                                */}</button>
+                                                            <button className='btn btn-danger' onClick={() => deletehandel(value.id)}>Delete</button>
                                                         </td>
                                                     </tr>
                                                 )
                                             })
                                         }
-                                       
+
                                     </tbody>
                                 </table>
 

@@ -8,7 +8,14 @@ function Profile() {
     const redirect=useNavigate();
     const [data, setData] = useState({});
     useEffect(() => {
-        fetch();
+        if(localStorage.getItem('uid'))
+        {
+            fetch();
+        }
+        else
+        {
+            redirect('/');
+        }
     });
     const fetch = async () => {
         const res = await axios.get(`http://localhost:3000/user/${localStorage.getItem('uid')}`);

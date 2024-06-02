@@ -22,6 +22,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Profile from "./website/pages/Profile";
 import Edit_profile from "./website/pages/Edit_profile";
+import PNF from "./website/pages/PNF";
 
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
       <Route path="/blog" element={<Blog/>}></Route>
       <Route path="/profile" element={<Profile/>}></Route>
       <Route path="/edit_profile/:id" element={<Edit_profile/>}></Route>
+      
+      <Route path="*" element={<PNF/>}></Route>
       
       {// admin roues
       }
